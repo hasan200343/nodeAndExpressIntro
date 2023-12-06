@@ -1,1 +1,1 @@
-woaau!! 
+this file is to initialize git repository !!
