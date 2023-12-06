@@ -36,7 +36,7 @@ app.get("/allemails", (req, res) => {
 
   let emailsShown = "<ol>";
   for (const email of existingEmails) {
-    emailsShown = "<li>" + email + "</li>";
+    emailsShown += "<li>" + email + "</li>";
   }
   emailsShown += "</ol>";
   res.send(emailsShown);
