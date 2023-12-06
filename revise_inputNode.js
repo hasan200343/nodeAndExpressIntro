@@ -28,6 +28,20 @@ app.post("/email", (req, res) => {
   res.send("You'll be notified whenever wo go online !!");
 });
 
+//displaying the emails
+app.get("/allemails", (req, res) => {
+  const filePath = path.join(__dirname, "email", "emails.json");
+  const fileData = fs.readFileSync(filePath);
+  const existingEmails = JSON.parse(fileData);
+
+  let emailsShown = "<ol>";
+  for (const email of existingEmails) {
+    emailsShown = "<li>" + email + "</li>";
+  }
+  emailsShown += "</ol>";
+  res.send(emailsShown);
+});
+
 //only for niggas!!
 app.get("/nigga", (req, res) => {
   res.send("BITCHY ASS NIGGA");
